@@ -1,0 +1,39 @@
+.blobWrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.1;
+}
+
+.blob1 {
+  width: 700px;
+  height: 700px;
+  background: #7c3aed;
+  top: -250px;
+  left: -250px;
+}
+
+.blob2 {
+  width: 500px;
+  height: 500px;
+  background: #0891b2;
+  bottom: -150px;
+  right: -150px;
+}
+
+.blob3 {
+  width: 350px;
+  height: 350px;
+  background: #22c55e;
+  top: 40%;
+  left: 40%;
+  opacity: 0.07;
+}

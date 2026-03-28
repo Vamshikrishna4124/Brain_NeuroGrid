@@ -1,0 +1,146 @@
+.screen {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.75rem 0.75rem 1.5rem;
+}
+
+.layout {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Top bar */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0 0.25rem;
+}
+
+.playerTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.playerName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.rightRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modeBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.sizeBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.18s;
+}
+
+.backBtn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+/* Progress line — shows how many found, not which number */
+.progressRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+}
+
+.progressLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.progressLabel strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.progressBar {
+  width: 140px;
+  height: 3px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent2);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+/* Restart */
+.restartBtn {
+  align-self: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 8px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: var(--font-body);
+  margin-top: 0.25rem;
+}
+
+.restartBtn:hover {
+  background: var(--surface2);
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .screen { padding: 0.5rem 0.5rem 1.5rem; }
+  .layout { gap: 0.5rem; }
+}

@@ -1,0 +1,142 @@
+/* ============================================================
+   NEUROGRID — Global Styles
+   ============================================================ */
+
+:root {
+  --bg:           #0a0a0f;
+  --surface:      #13131a;
+  --surface2:     #1c1c28;
+  --surface3:     #24243a;
+  --border:       rgba(255,255,255,0.07);
+  --border2:      rgba(255,255,255,0.13);
+  --border3:      rgba(255,255,255,0.22);
+
+  --accent:       #7c3aed;
+  --accent2:      #a855f7;
+  --accent-glow:  rgba(124,58,237,0.4);
+  --accent-soft:  rgba(168,85,247,0.12);
+
+  --green:        #22c55e;
+  --green-glow:   rgba(34,197,94,0.3);
+  --red:          #ef4444;
+  --yellow:       #f59e0b;
+  --cyan:         #06b6d4;
+
+  --text:         #f0f0f8;
+  --muted:        #7070a0;
+  --dim:          #404060;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-body:    'DM Sans', sans-serif;
+
+  --radius-sm:    8px;
+  --radius-md:    14px;
+  --radius-lg:    20px;
+  --radius-xl:    28px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Noise texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Inputs reset */
+input, button, textarea, select {
+  font-family: var(--font-body);
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Range input */
+input[type='range'] {
+  width: 100%;
+  appearance: none;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent2);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 16px var(--accent-glow);
+  cursor: pointer;
+}
+input[type='range']::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent2);
+  border: 3px solid var(--bg);
+  cursor: pointer;
+}
+
+/* Confetti pieces */
+.confetti-piece {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+  }
+}
